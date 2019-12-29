@@ -1,0 +1,16 @@
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\OnlineShop.mdf
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\OnlineShop_log.ldf
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\EntityFramework.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\EntityFramework.SqlServer.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\PagedList.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\PagedList.Mvc.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\EntityFramework.xml
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\EntityFramework.SqlServer.xml
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\PagedList.xml
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Release\PagedList.Mvc.xml
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Release\Model.Migrations.InitialCreate.resources
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Release\Model.Migrations.Updatedb.resources
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Release\Model.csproj.GenerateResource.Cache
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Release\Model.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Release\Model.pdb

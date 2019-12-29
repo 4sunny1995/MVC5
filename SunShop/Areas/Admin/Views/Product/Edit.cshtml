@@ -1,0 +1,148 @@
+﻿@model Model.EF.Product
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+@using (Html.BeginForm("Edit","Product",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID)
+            <div class="row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="Name" value="@Model.Name" />
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="Code" value="@Model.Code" />
+                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="MetaTitle" value="@Model.MetaTitle" />
+                        @Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="Description" value="@Model.Description" />
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="Avatar" value="@Model.Avatar" />
+                        @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="Price" value="@Model.Price" />
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.PromotionPrice, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="PromotionPrice" value="@Model.PromotionPrice" />
+                        @Html.ValidationMessageFor(model => model.PromotionPrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Quantily, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="Quantily" value="@Model.Quantily" />
+                        @Html.ValidationMessageFor(model => model.Quantily, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.ModifiedDate, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="ModifiedDate" value="@Model.ModifiedDate" />
+                        @Html.ValidationMessageFor(model => model.ModifiedDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.MeteKeywords, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="MeteKeywords" value="@Model.MeteKeywords" />
+                        @Html.ValidationMessageFor(model => model.MeteKeywords, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.MetaDesciptions, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        @Html.EditorFor(model => model.MetaDesciptions, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MetaDesciptions, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Status)
+                            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.TopHot, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="TopHot" value="@Model.TopHot" />
+                        @Html.ValidationMessageFor(model => model.TopHot, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.ViewCount, htmlAttributes: new { @class = "control-label " })
+                    <div class="">
+                        <input class="form-control" name="ViewCount" value="@Model.ViewCount" />
+                        @Html.ValidationMessageFor(model => model.ViewCount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 ">
+                    <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

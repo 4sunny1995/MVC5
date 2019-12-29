@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Find";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+@section header{
+   Tìm kiếm người dùng 
+}
+<div class="container mt-3">
+    <br>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#getByID">Thông qua ID</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#getByUsername">Thông qua tài khoản</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#getByName">Thông qua họ và tên</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="getByID" class="container tab-pane active">
+            <br>
+            <h3>Tìm kiếm</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" id="searchID" class="form-control" placeholder="Nhập ID tài khoản" />
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btnsearchID">Tìm kiếm</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">ID</div>
+                <div class="col-md-2">Tên tài khoản</div>
+                <div class="col-md-2">Mật khẩu</div>
+                <div class="col-md-2">Họ và tên</div>
+                <div class="col-md-2">Email</div>
+                <div class="col-md-2">Số điện thoại</div>
+                <div class="col-md-1">Tình trạng</div>
+            </div>
+            <div class="row">
+                <div class="col-md-1" >ID</div>
+                <div class="col-md-2">Tên tài khoản</div>
+                <div class="col-md-2">Mật khẩu</div>
+                <div class="col-md-2">Họ và tên</div>
+                <div class="col-md-2">Email</div>
+                <div class="col-md-2">Số điện thoại</div>
+                <div class="col-md-1">Tình trạng</div>
+            </div>
+            
+        </div>
+        <div id="getByUsername" class="container tab-pane fade">
+            <br>
+            <h3>Tìm kiếm</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" id="searchUsername" class="form-control"  placeholder="Nhập tên tài khoản"  />
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btnsearchUsername">Tìm kiếm</button>
+                </div>
+            </div>
+        </div>
+        <div id="getByName" class="container tab-pane fade">
+            <br>
+            <h3>Tìm kiếm</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" id="searchName" class="form-control"  placeholder="Nhập họ và tên"  />
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btnsearchName">Tìm kiếm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

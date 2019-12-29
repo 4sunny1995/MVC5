@@ -1,0 +1,37 @@
+﻿@model PagedList.IPagedList<Model.EF.Order>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3" style="height:auto">
+            <ul class="list-group">
+                <li class="list-group-item">Menu 1</li>
+                <li class="list-group-item">Menu 2</li>
+                <li class="list-group-item">Menu 3</li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="col-md-12">
+                <div class="col-md-3">ID</div>
+                <div class="col-md-3">Name</div>
+                <div class="col-md-3">ProducID</div>
+                <div class="col-md-3">Status</div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-md-12">
+                    <div class="col-md-3">@item.ID</div>
+                    <div class="col-md-3">@item.</div>
+                    <div class="col-md-3"></div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</div>
+

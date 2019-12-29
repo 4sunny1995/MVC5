@@ -1,0 +1,1 @@
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\SunShop\obj\Release\SunShop.csprojResolveAssemblyReference.cache

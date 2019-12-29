@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A6FBE60-FE08-47F9-904A-4572CC2668C7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunShop</RootNamespace>
+    <AssemblyName>SunShop</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Common\CommonConstant.cs" />
+    <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\CartItemController.cs" />
+    <Compile Include="Controllers\CheckingController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeBasicController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\UserOrder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Assets\Admin\css\style.min.css" />
+    <Content Include="Assets\Admin\js\Ajax-ProductController.js" />
+    <Content Include="Assets\Admin\js\Ajax-Search.js" />
+    <Content Include="Assets\Admin\js\Ajax-UploadFile.js" />
+    <Content Include="Assets\Admin\js\Ajax-UserController.js" />
+    <Content Include="Assets\assets\css\style.min.css" />
+    <Content Include="Assets\assets\img\1.jpg" />
+    <Content Include="Assets\assets\img\background-login.jpg" />
+    <Content Include="Assets\assets\img\background\canh-dong-huong-duong-2.jpg" />
+    <Content Include="Assets\assets\img\background\hinh-anh-trang-trai-hoa-huong-duong_022808424.jpg" />
+    <Content Include="Assets\assets\img\background\hinh-anh-vuon-hoa-huong-duong-duoi-anh-nang-mat-troi_112957940.jpg" />
+    <Content Include="Assets\assets\img\background\image3-19.jpg" />
+    <Content Include="Assets\assets\img\bieutuong BD chính thức %28RGB%29_Key_06072016152919.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\10.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\11.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\12.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\13.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\14.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\15.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\2.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\3.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\4.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\5.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\6.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\7.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\8.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\9.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\images %281%29.jpg" />
+    <Content Include="Assets\assets\img\Bohoa\images.jpg" />
+    <Content Include="Assets\assets\img\chauhoa.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\1.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\10.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\11.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\12.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\13.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\14.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\15.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\16.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\2.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\3.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\4.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\5.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\6.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\7.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\8.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\9.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\1.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\2.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\3.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\4.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\5-canh-dong-hoa-huong-duong-dep-nhat-viet-nam-1-814x500.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\c0210.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\Canh-dong-hoa-huong-duong-Nghe-An-e1507195416269.png" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\canh-dong-hoa-huong-duong.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\du-lich-nhat-ban-kham-pha-canh-dong-hoa-huong-duong-ngoan-muc-1465310679.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\images %281%29.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\images.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\ve-dep-ruc-ro-tu-canh-dong-huong-duong-lon-nhat-viet-nam-26-11-2015-1448512656.jpg" />
+    <Content Include="Assets\assets\img\Chauhoa\Thamquan\vuon-hoa-huong-duong-o-tp-hcm-10-15456363734851438138717.jpg" />
+    <Content Include="Assets\assets\img\download.jpg" />
+    <Content Include="Assets\assets\img\giohoahuongduong.jpg" />
+    <Content Include="Assets\assets\img\Hinh 1.jpg" />
+    <Content Include="Assets\assets\img\Hinh 3.jpg" />
+    <Content Include="Assets\assets\img\Hinh 4.jpg" />
+    <Content Include="Assets\assets\img\hinh-anh-hinh-nen-hoa-huong-duong-dep-nhat1.jpg" />
+    <Content Include="Assets\assets\img\hinh-nen-hoa-huong-duong-dep-5.jpg" />
+    <Content Include="Assets\assets\img\hinh-nen-hoa-huong-duong-dep-nhat-gioi-14.jpg" />
+    <Content Include="Assets\assets\img\Hinh.jpg" />
+    <Content Include="Assets\assets\img\hoa-1.jpg" />
+    <Content Include="Assets\assets\img\hoa-2.jpg" />
+    <Content Include="Assets\assets\img\hoa-3.jpg" />
+    <Content Include="Assets\assets\img\images.jpg" />
+    <Content Include="Assets\assets\img\khong-chi-dep-hoa-huong-duong-con-mang-nhung-y-nghia-dac-biet-nay-1-tieudungplus-1543724508.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\1.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\10.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\11.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\12.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\13.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\14.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\15.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\2.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\3.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\4.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\5.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\6.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\7.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\8.jpg" />
+    <Content Include="Assets\assets\img\Langhoa\9.jpg" />
+    <Content Include="Assets\assets\img\logo-2.png" />
+    <Content Include="Assets\assets\img\Loài hoa đem lại may mắn cho 12 cung hoàng đạo.jpg" />
+    <Content Include="Assets\assets\img\SP\10112017-450x600.jpg" />
+    <Content Include="Assets\assets\img\SP\14908998711597_IMG_5400.JPG" />
+    <Content Include="Assets\assets\img\SP\2065_shop-hoa-tuoi.jpg" />
+    <Content Include="Assets\assets\img\SP\650-4250 %281%29.jpg" />
+    <Content Include="Assets\assets\img\SP\650-4250.jpg" />
+    <Content Include="Assets\assets\img\SP\755a5966c101225f7b10.jpg" />
+    <Content Include="Assets\assets\img\SP\bo-hoa-h-ng-d-ng-sunflowers-collections-2-455x531.jpg" />
+    <Content Include="Assets\assets\img\SP\bo-hoa-huong-duong-toa-nang.jpg" />
+    <Content Include="Assets\assets\img\SP\gio-hoa-huong-duong.gif" />
+    <Content Include="Assets\assets\img\SP\HD001.jpg" />
+    <Content Include="Assets\assets\img\SP\hoa-khai-truong2017A_nho.jpg" />
+    <Content Include="Assets\assets\img\SP\hoa-sinh-nhat-T7-1_nho.jpg" />
+    <Content Include="Assets\assets\img\SP\lang-hoa-huong-duong-1476674297-1996387-1488606927.jpg" />
+    <Content Include="Assets\assets\img\SP\lang-hoa-huong-duong980.jpg" />
+    <Content Include="Assets\assets\img\SP\langhoahuongduongdep.jpg" />
+    <Content Include="Assets\assets\img\SP\timthumb.jpg" />
+    <Content Include="Assets\assets\img\SP\tong-hop-cac-mau-cam-hoa-huong-duong-ngay-tet-dep-ruc-ro-10.jpg" />
+    <Content Include="Assets\assets\img\star-sky.jpg" />
+    <Content Include="Assets\assets\img\sunflower-1.jpg" />
+    <Content Include="Assets\assets\img\sunflower.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\1.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\2.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\3.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\4.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\5-canh-dong-hoa-huong-duong-dep-nhat-viet-nam-1-814x500.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\c0210.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\Canh-dong-hoa-huong-duong-Nghe-An-e1507195416269.png" />
+    <Content Include="Assets\assets\img\Thamquan\canh-dong-hoa-huong-duong.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\du-lich-nhat-ban-kham-pha-canh-dong-hoa-huong-duong-ngoan-muc-1465310679.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\images %281%29.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\images.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\ve-dep-ruc-ro-tu-canh-dong-huong-duong-lon-nhat-viet-nam-26-11-2015-1448512656.jpg" />
+    <Content Include="Assets\assets\img\Thamquan\vuon-hoa-huong-duong-o-tp-hcm-10-15456363734851438138717.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\10_toasang.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\11_Niemtin.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\12_giotnang.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\13_vuonxinh.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\14_hanhoan.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\15_ngayha.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\16_chutvangvuong.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\17_bietan.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\18_vukhuc.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\19_ngaynanglen.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\1_Cauhat.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\20_maumatroi.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\21_chucmungvuonlen.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\22_tuoisang.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\23_Langhoathanhcong.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\24_Chucmungdieutotdep.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\25_vungtin.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\26_Maibennhau.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\27_Uocmo.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\28_Sommai.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\2_Anhngoc.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\3_kinhtrong.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\4_amap.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\5_anhduong.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\6_Rangngoi.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\7_huongnang.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\8_Nângm.jpg" />
+    <Content Include="Assets\assets\img\Trangchu\9_Khoe sac tham.jpg" />
+    <Content Include="Assets\assets\img\user.png" />
+    <Content Include="Assets\Client\css\bootstrap.min.css" />
+    <Content Include="Assets\Client\css\styles.min.css" />
+    <Content Include="Assets\Client\css\Trangchu_css.css" />
+    <Content Include="Assets\Client\img\Avatar\67938303_712486309177032_7716638058480664576_n.jpg" />
+    <Content Include="Assets\Client\img\background-login.jpg" />
+    <Content Include="Assets\Client\img\background\canh-dong-huong-duong-2.jpg" />
+    <Content Include="Assets\Client\img\background\hinh-anh-trang-trai-hoa-huong-duong_022808424.jpg" />
+    <Content Include="Assets\Client\img\background\hinh-anh-vuon-hoa-huong-duong-duoi-anh-nang-mat-troi_112957940.jpg" />
+    <Content Include="Assets\Client\img\background\image3-19.jpg" />
+    <Content Include="Assets\Client\img\BH\10.jpg" />
+    <Content Include="Assets\Client\img\BH\11.jpg" />
+    <Content Include="Assets\Client\img\BH\12.jpg" />
+    <Content Include="Assets\Client\img\BH\13.jpg" />
+    <Content Include="Assets\Client\img\BH\14.jpg" />
+    <Content Include="Assets\Client\img\BH\15.jpg" />
+    <Content Include="Assets\Client\img\BH\2.jpg" />
+    <Content Include="Assets\Client\img\BH\3.jpg" />
+    <Content Include="Assets\Client\img\BH\4.jpg" />
+    <Content Include="Assets\Client\img\BH\5.jpg" />
+    <Content Include="Assets\Client\img\BH\6.jpg" />
+    <Content Include="Assets\Client\img\BH\7.jpg" />
+    <Content Include="Assets\Client\img\BH\8.jpg" />
+    <Content Include="Assets\Client\img\BH\9.jpg" />
+    <Content Include="Assets\Client\img\BH\1.jpg" />
+    <Content Include="Assets\Client\img\BH\images.jpg" />
+    <Content Include="Assets\Client\img\CH\1.jpg" />
+    <Content Include="Assets\Client\img\CH\10.jpg" />
+    <Content Include="Assets\Client\img\CH\11.jpg" />
+    <Content Include="Assets\Client\img\CH\12.jpg" />
+    <Content Include="Assets\Client\img\CH\13.jpg" />
+    <Content Include="Assets\Client\img\CH\14.jpg" />
+    <Content Include="Assets\Client\img\CH\15.jpg" />
+    <Content Include="Assets\Client\img\CH\16.jpg" />
+    <Content Include="Assets\Client\img\CH\2.jpg" />
+    <Content Include="Assets\Client\img\CH\3.jpg" />
+    <Content Include="Assets\Client\img\CH\4.jpg" />
+    <Content Include="Assets\Client\img\CH\5.jpg" />
+    <Content Include="Assets\Client\img\CH\6.jpg" />
+    <Content Include="Assets\Client\img\CH\7.jpg" />
+    <Content Include="Assets\Client\img\CH\8.jpg" />
+    <Content Include="Assets\Client\img\CH\9.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\1.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\2.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\3.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\4.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\5-canh-dong-hoa-huong-duong-dep-nhat-viet-nam-1-814x500.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\c0210.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\Canh-dong-hoa-huong-duong-Nghe-An-e1507195416269.png" />
+    <Content Include="Assets\Client\img\CH\Thamquan\canh-dong-hoa-huong-duong.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\du-lich-nhat-ban-kham-pha-canh-dong-hoa-huong-duong-ngoan-muc-1465310679.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\images %281%29.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\images.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\ve-dep-ruc-ro-tu-canh-dong-huong-duong-lon-nhat-viet-nam-26-11-2015-1448512656.jpg" />
+    <Content Include="Assets\Client\img\CH\Thamquan\vuon-hoa-huong-duong-o-tp-hcm-10-15456363734851438138717.jpg" />
+    <Content Include="Assets\Client\img\Cover\bna_huongduong3_sachnguyen2078119_5122018.jpg" />
+    <Content Include="Assets\Client\img\Cover\images %281%29.jpg" />
+    <Content Include="Assets\Client\img\LH\1.jpg" />
+    <Content Include="Assets\Client\img\LH\10.jpg" />
+    <Content Include="Assets\Client\img\LH\11.jpg" />
+    <Content Include="Assets\Client\img\LH\12.jpg" />
+    <Content Include="Assets\Client\img\LH\13.jpg" />
+    <Content Include="Assets\Client\img\LH\14.jpg" />
+    <Content Include="Assets\Client\img\LH\15.jpg" />
+    <Content Include="Assets\Client\img\LH\2.jpg" />
+    <Content Include="Assets\Client\img\LH\3.jpg" />
+    <Content Include="Assets\Client\img\LH\4.jpg" />
+    <Content Include="Assets\Client\img\LH\5.jpg" />
+    <Content Include="Assets\Client\img\LH\6.jpg" />
+    <Content Include="Assets\Client\img\LH\7.jpg" />
+    <Content Include="Assets\Client\img\LH\8.jpg" />
+    <Content Include="Assets\Client\img\LH\9.jpg" />
+    <Content Include="Assets\Client\img\SP\1.jpg" />
+    <Content Include="Assets\Client\img\SP\10.JPG" />
+    <Content Include="Assets\Client\img\SP\10112017-450x600.jpg" />
+    <Content Include="Assets\Client\img\SP\11.gif" />
+    <Content Include="Assets\Client\img\SP\14908998711597_IMG_5400.JPG" />
+    <Content Include="Assets\Client\img\SP\2.jpg" />
+    <Content Include="Assets\Client\img\SP\2065_shop-hoa-tuoi.jpg" />
+    <Content Include="Assets\Client\img\SP\3.jpg" />
+    <Content Include="Assets\Client\img\SP\4.jpg" />
+    <Content Include="Assets\Client\img\SP\5.jpg" />
+    <Content Include="Assets\Client\img\SP\6.jpg" />
+    <Content Include="Assets\Client\img\SP\650-4250 %281%29.jpg" />
+    <Content Include="Assets\Client\img\SP\650-4250.jpg" />
+    <Content Include="Assets\Client\img\SP\7.jpg" />
+    <Content Include="Assets\Client\img\SP\755a5966c101225f7b10.jpg" />
+    <Content Include="Assets\Client\img\SP\8.jpg" />
+    <Content Include="Assets\Client\img\SP\9.jpg" />
+    <Content Include="Assets\Client\img\SP\bo-hoa-h-ng-d-ng-sunflowers-collections-2-455x531.jpg" />
+    <Content Include="Assets\Client\img\SP\bo-hoa-huong-duong-toa-nang.jpg" />
+    <Content Include="Assets\Client\img\SP\gio-hoa-huong-duong.gif" />
+    <Content Include="Assets\Client\img\SP\HD001.jpg" />
+    <Content Include="Assets\Client\img\SP\hoa-khai-truong2017A_nho.jpg" />
+    <Content Include="Assets\Client\img\SP\hoa-sinh-nhat-T7-1_nho.jpg" />
+    <Content Include="Assets\Client\img\SP\lang-hoa-huong-duong-1476674297-1996387-1488606927.jpg" />
+    <Content Include="Assets\Client\img\SP\lang-hoa-huong-duong980.jpg" />
+    <Content Include="Assets\Client\img\SP\langhoahuongduongdep.jpg" />
+    <Content Include="Assets\Client\img\SP\timthumb.jpg" />
+    <Content Include="Assets\Client\img\SP\tong-hop-cac-mau-cam-hoa-huong-duong-ngay-tet-dep-ruc-ro-10.jpg" />
+    <Content Include="Assets\Client\img\TC\10_toasang.jpg" />
+    <Content Include="Assets\Client\img\TC\11_Niemtin.jpg" />
+    <Content Include="Assets\Client\img\TC\12_giotnang.jpg" />
+    <Content Include="Assets\Client\img\TC\13_vuonxinh.jpg" />
+    <Content Include="Assets\Client\img\TC\14_hanhoan.jpg" />
+    <Content Include="Assets\Client\img\TC\15_ngayha.jpg" />
+    <Content Include="Assets\Client\img\TC\16_chutvangvuong.jpg" />
+    <Content Include="Assets\Client\img\TC\17_bietan.jpg" />
+    <Content Include="Assets\Client\img\TC\18_vukhuc.jpg" />
+    <Content Include="Assets\Client\img\TC\19_ngaynanglen.jpg" />
+    <Content Include="Assets\Client\img\TC\1_Cauhat.jpg" />
+    <Content Include="Assets\Client\img\TC\20_maumatroi.jpg" />
+    <Content Include="Assets\Client\img\TC\21_chucmungvuonlen.jpg" />
+    <Content Include="Assets\Client\img\TC\22_tuoisang.jpg" />
+    <Content Include="Assets\Client\img\TC\23_Langhoathanhcong.jpg" />
+    <Content Include="Assets\Client\img\TC\24_Chucmungdieutotdep.jpg" />
+    <Content Include="Assets\Client\img\TC\25_vungtin.jpg" />
+    <Content Include="Assets\Client\img\TC\26_Maibennhau.jpg" />
+    <Content Include="Assets\Client\img\TC\27_Uocmo.jpg" />
+    <Content Include="Assets\Client\img\TC\28_Sommai.jpg" />
+    <Content Include="Assets\Client\img\TC\2_Anhngoc.jpg" />
+    <Content Include="Assets\Client\img\TC\3_kinhtrong.jpg" />
+    <Content Include="Assets\Client\img\TC\4_amap.jpg" />
+    <Content Include="Assets\Client\img\TC\5_anhduong.jpg" />
+    <Content Include="Assets\Client\img\TC\6_Rangngoi.jpg" />
+    <Content Include="Assets\Client\img\TC\7_huongnang.jpg" />
+    <Content Include="Assets\Client\img\TC\8_Nângm.jpg" />
+    <Content Include="Assets\Client\img\TC\9_Khoe sac tham.jpg" />
+    <Content Include="Assets\Client\js\Ajax-CartItem.js" />
+    <Content Include="Assets\Client\js\JavaScript.js" />
+    <Content Include="Assets\Client\js\CartController.js" />
+    <Content Include="Assets\Client\js\jsProfile.js" />
+    <Content Include="Assets\Client\message.html" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layouts.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\setRole.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Find.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <None Include="Properties\PublishProfiles\LocalPublic.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\HomeBasic\Index.cshtml" />
+    <Content Include="Views\HomeBasic\Login.cshtml" />
+    <Content Include="Views\HomeBasic\homePage.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\HomeBasic\Register.cshtml" />
+    <Content Include="Views\HomeBasic\Profile.cshtml" />
+    <Content Include="Views\HomeBasic\Edit.cshtml" />
+    <Content Include="Views\CartItem\Index.cshtml" />
+    <Content Include="Views\Shared\CartHeader.cshtml" />
+    <Content Include="Views\CartItem\Thanhtoan.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\CartItem\Orders.cshtml" />
+    <Content Include="Views\CartItem\ThongBao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Assets\Admin\scss\" />
+    <Folder Include="Assets\Admin\vendor\" />
+    <Folder Include="Assets\Client\img\Upload\" />
+    <Folder Include="Uploads\" />
+    <Folder Include="Views\Checking\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{0513472d-acc1-4cf6-aab8-a950b201d9a5}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57606</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57606/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

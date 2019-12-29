@@ -1,0 +1,71 @@
+﻿
+@model PagedList.IPagedList<Model.EF.Order>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+@section header{
+    Danh sách đơn hàng
+}
+<div class="card-body">
+    @using (Html.BeginForm("Index", "Order", FormMethod.Get))
+    {
+        <div class="row form-group">
+            <div class="col-md-4">
+                <input type="text" id="search" name="searchString" class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            </div>
+        </div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Khách hàng</th>
+                    <th>Mặt hàng</th>
+                    <th>Tổng tiền</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Tình trạng</th>
+                    <th>Ngày đặt hàng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="/Admin/Order/Edit/@item.id">Sửa</a>
+                            <a href="/Admin/Order/Delete/@item.id">Xóa</a>
+                        </td>
+                        <td>@item.UserName</td>
+                        <td>@item.productName</td>
+                        <td>@item.Total</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Address</td>
+                        <td>@{ 
+                            switch (item.Status)
+                            {
+                                case 0:{<span class="badge badge-primary">Đang giao</span>};break;
+                                case 1:{<span class="badge badge-success">Đã giao</span>}; break;
+                                case 2:{<span class="badge badge-danger">Đã hủy</span>}; break;
+                                default: break;
+                            }
+                             }</td>
+                        
+                        <td>@item.CreatedDate</td>
+
+
+
+                                                        </tr>
+                }
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @class = "btn btn-primary" }))
+    </div>
+</div>

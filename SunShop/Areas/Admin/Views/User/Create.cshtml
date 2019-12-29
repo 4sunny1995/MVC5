@@ -1,0 +1,112 @@
+﻿@model Model.EF.tblUser
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+@section header {
+    Quản lý tài khoản
+}
+
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Thêm tài khoản người dùng</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class=" row">
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-10" })
+                <div class="col-md-10">
+                    <input class="form-control" name="UserName" />
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-10" })
+                <div class="col-md-10">
+                    <input name="Password" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-10" })
+                <div class="col-md-10">
+                    <input class="form-control" name="Name" />
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-10" })
+                    <div class="col-md-10">
+                        <input class="form-control" name="Address" />
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+        
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-10" })
+                <div class="col-md-10">
+                    <input class="form-control" name="Email" />
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-10" })
+                <div class="col-md-10">
+                    <input class="form-control" name="Phone" />
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            </div>
+<div class="row">
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.Mod, htmlAttributes: new { @class = "control-label col-md-10" })
+        <div class="col-md-10">
+            <div class="w-100">
+                <select class="w-100 form-control" name="Mod">
+                    <option selected value="0">Người dùng phổ thông</option>
+                    <option value="1">Quản lý cửa hàng</option>
+                    <option value="2">Quản trị viên</option>
+                </select>
+            </div>
+            @Html.ValidationMessageFor(model => model.Mod, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.MeteKeywords, htmlAttributes: new { @class = "control-label col-md-10" })
+        <div class="col-md-10">
+            <input class="form-control" name="MeteKeywords" />
+            @Html.ValidationMessageFor(model => model.MeteKeywords, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.MetaDesciptions, htmlAttributes: new { @class = "control-label col-md-10" })
+        <div class="col-md-10">
+            <input class="form-control" name="MetaDesciptions" />
+            @Html.ValidationMessageFor(model => model.MetaDesciptions, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
+        <div class="form-group text-center">
+            <div class="col-md-10">
+                <br />
+                <button type="submit" value="" class="btn btn-primary">Thêm tài khoản</button>
+            </div>
+        </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

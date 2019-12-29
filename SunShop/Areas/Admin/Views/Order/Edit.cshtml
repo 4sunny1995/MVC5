@@ -1,0 +1,96 @@
+﻿@model Model.EF.Order
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section header { Chỉnh sửa đơn hàng }
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+        <div class="row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.userID, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="userID" value="@Model.userID" />
+                    @Html.ValidationMessageFor(model => model.userID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.productID, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="productID" value="@Model.productID" />
+                    @Html.ValidationMessageFor(model => model.productID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="Status" value="@Model.Status" />
+                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="CreatedDate" value="@Model.CreatedDate" />
+                    @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="UserName" value="@Model.UserName" />
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="Total" value="@Model.Total" />
+                    @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="Address" value="@Model.Address" />
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.productName, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="productName" value="@Model.productName" />
+                    @Html.ValidationMessageFor(model => model.productName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+            
+
+            <div class="col-md-4">
+                <div class="col-md-offset-2 ">
+                    <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

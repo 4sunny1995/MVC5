@@ -1,0 +1,136 @@
+﻿@model Model.EF.Product
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section header { Thêm mới sản phẩm}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="Name" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input class="form-control" name="Code" value="Upload"   />  
+                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="MetaTitle" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="Price" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.PromotionPrice, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="PromotionPrice" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.PromotionPrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Quantily, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="Quantily" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Quantily, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label ", @type = "file",@id="uploadImage",@name="inpImage" })
+            <div class="form-inline">
+                        <input  type="text" name="Avatar"  id="picture" class="form-control" />
+                        <input type="file" id="fileUpload"  accept="image/"  style="display:none" />
+                        <input type="button" id="btnUpload" value="..." class="btn btn-success" /><hr />
+            </div>
+            <img id="pictureUpload" width="225px" />
+        </div>
+        <div class="row">
+            
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.MetaDesciptions, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="MetaDesciptions" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.MetaDesciptions, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="Description" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="Detail" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label " })
+                <div class="form-inline">
+                @Html.CheckBoxFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })Còn hàng
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label " })
+                <div>
+                    <select name="CategoryID" class="form-group">
+                        <option value="1" selected class="form-control">Loại 1</option>
+                        <option value="2" class="form-control">Loại 2</option>
+                        <option value="3" class="form-control">Loại 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                @Html.LabelFor(model => model.ViewCount, htmlAttributes: new { @class = "control-label " })
+                <div class="">
+                    <input name="ViewCount" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.ViewCount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="form-group">
+                <div class="col-md-offset-2 ">
+                    <input type="submit" value="Thêm sản phẩm" class="btn btn-primary" id="btnSubmit" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

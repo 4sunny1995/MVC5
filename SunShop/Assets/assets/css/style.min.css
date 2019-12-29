@@ -1,0 +1,17 @@
+.TextBoxFor-border-radius{
+    border-radius: 1%;
+}
+.sun-profile-cover{
+    position:absolute;
+    z-index:1;
+    width:100%;
+    height:280px;
+}
+.sun-profile-avatar{
+    position:absolute;
+    height:75%;
+    width:18%;
+    z-index:2;
+    border-radius:50% !important;
+    vertical-align:central;
+}

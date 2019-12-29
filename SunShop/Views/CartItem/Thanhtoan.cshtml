@@ -1,0 +1,80 @@
+﻿
+@model List<SunShop.Models.CartItem>
+{
+    ViewBag.Title = "Thanh toán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+@{ var userid = Session["USER_SESSION"] as SunShop.Common.UserLogin;}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item active">Giỏ hàng</li>
+                <li class="list-group-item"><a href="#" id="btnContinue">Tiếp tục mua hàng</a></li>
+                <li class="list-group-item">Phản hồi</li>
+            </ul>
+        </div>
+        <div class="col-md-9 text-center">
+            <div class="row">
+                @if (Model.Count > 0)
+                {
+
+                    <div class="row">
+                        <div class="col-md-1 text-center" style="border:1px solid #f5f582">#</div>
+                        <div class="col-md-1 text-center" style="border:1px solid #f5f582">Mã SP</div>
+                        <div class="col-md-2 text-center" style="border:1px solid #f5f582">Tên SP</div>
+                        <div class="col-md-2 text-center" style="border:1px solid #f5f582">Ảnh SP</div>
+                        <div class="col-md-2 text-center" style="border:1px solid #f5f582">Số lượng</div>
+                        <div class="col-md-2 text-center" style="border:1px solid #f5f582">Đơn giá</div>
+                        <div class="col-md-2 text-center" style="border:1px solid #f5f582">Thành tiền</div>
+                    </div>
+                                decimal? tong = 0;
+                                foreach (var item in Model)
+                                {
+
+
+                        <div class="row">
+                            <div class="col-md-1 text-center text-center" style="border:1px solid #f5f582;height:125px;padding-top:3%">
+                                <a href="/CartItem/Delete/@item.Product.ID" class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            </div>
+                            <div class="col-md-1 text-center" style="border:1px solid #f5f582;height:125px">@item.Product.Code</div>
+                            <div class="col-md-2 text-center" style="border:1px solid #f5f582;height:125px">@item.Product.Name</div>
+                            <div class="col-md-2 text-center" style="border:1px solid #f5f582;height:125px"><img src="~/Assets/Client/img/@item.Product.Code/@item.Product.Avatar" width="100%" height="125px" /></div>
+                            <div class="col-md-2 text-center" style="border:1px solid #f5f582;height:125px"><input type="text" class="form-control txtquantity" value="@item.Quantity" data-it="@item.Product.ID" disabled /></div>
+                            <div class="col-md-2 text-center" style="border:1px solid #f5f582;height:125px">@(!item.Product.PromotionPrice.ToString().IsEmpty() ? item.Product.Price.GetValueOrDefault(0) : item.Product.PromotionPrice)</div>
+                            <div class="col-md-2 text-center" style="border:1px solid #f5f582;height:125px">@(!item.Product.PromotionPrice.ToString().IsEmpty() ? item.Product.Price.GetValueOrDefault(0) * item.Quantity : item.Product.PromotionPrice * item.Quantity)</div>
+                        </div>
+                        if (item.Product.PromotionPrice.Equals(""))
+                        {
+                            tong += item.Product.PromotionPrice * item.Quantity;
+                        }
+                        else
+                        {
+                            tong += item.Product.Price * item.Quantity;
+                        }
+                    }
+                    <span style="font-family:'Times New Roman';font-size:20px;font-weight">Tổng số tiền bạn phải trả là : </span>
+                    <span style="font-family:'Times New Roman';font-size:28px;font-weight;color:red">@tong VNĐ </span>
+
+
+                }
+                
+            </div>
+            <div class="row">
+                <form action="/CartItem/Thanhtoan" method="post">
+                    <input name="userID" value="@userid.UserID" style="display:none" />
+                    <input type="submit" id="btnAccept" class="btn btn-primary" value="Chấp nhận" />
+                    <a href="/CartItem/Index" class="btn btn-danger">Hủy</a>
+                </form>
+            </div>     
+                
+            </div>
+        </div>
+    </div>
+<br />
+

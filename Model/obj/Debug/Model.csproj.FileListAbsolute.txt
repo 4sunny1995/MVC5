@@ -1,0 +1,17 @@
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\EntityFramework.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\EntityFramework.xml
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Debug\Model.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Debug\Model.pdb
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\Model.dll.config
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\Model.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\Model.pdb
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Debug\Model.Migrations.InitialCreate.resources
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Debug\Model.csproj.GenerateResource.Cache
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\obj\Debug\Model.Migrations.Updatedb.resources
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\PagedList.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\PagedList.Mvc.dll
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\PagedList.xml
+D:\web\Back-end\ASP_NET\MVC5\final\SunShop\Model\bin\Debug\PagedList.Mvc.xml

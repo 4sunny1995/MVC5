@@ -1,0 +1,101 @@
+﻿@model Model.EF.tblUser
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+@using (Html.BeginForm("Edit","HomeBasic",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="container-fluid">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="UserName" value="@Model.UserName" />
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="Password" value="@Model.Password" disabled  />
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="Name" value="@Model.Name" required />
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="Address" value="@Model.Address" />
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="Email" value="@Model.Email" />
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="Phone" value="@Model.Phone" />
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.ModifiedDate, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="ModifiedDate" value="@Model.ModifiedDate" />
+                @Html.ValidationMessageFor(model => model.ModifiedDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.MeteKeywords, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="MeteKeywords" value="@Model.MeteKeywords" />
+                @Html.ValidationMessageFor(model => model.MeteKeywords, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.MetaDesciptions, htmlAttributes: new { @class = "control-label " })
+            <div class="">
+                <input class="form-control" name="MetaDesciptions" value="@Model.MetaDesciptions" />
+                @Html.ValidationMessageFor(model => model.MetaDesciptions, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="row text-center">
+            <div class="col-md-12 ">
+                <input type="submit" value="Cập nhật" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

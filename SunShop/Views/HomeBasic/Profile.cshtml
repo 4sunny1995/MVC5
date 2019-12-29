@@ -1,0 +1,249 @@
+﻿
+@model SunShop.Models.UserOrder
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="row">
+            <div style="position:relative;width:100%!important;height:280px" class="row">
+                <img src="~/Assets/Client/img/Cover/@Model.User.Cover" alt="ảnh bìa" class="sun-profile-cover" />
+                <div class="text-center" style="padding-top:5%"><img src="~/Assets/Client/img/Avatar/@Model.User.Avatar" class="sun-profile-avatar" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item active" id="select1">Thông tin tài khoản</li>
+                <li class="list-group-item" id="select2">Quản lý hình ảnh</li>
+                <li class="list-group-item" id="select3">Thay đổi mật khẩu</li>
+                <li class="list-group-item" id="select4">Lịch sử giao dịch</li>
+                <li class="list-group-item" id="select5">Báo cáo</li>
+
+            </ul>
+            <div>
+                <iframe width="100%" height="360px" src="https://www.youtube.com/embed/j8FHeT0_dOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <h3 class="text-center" id="Tieude">Thông tin cá nhân</h3>
+            </div>
+            <div id="menu1">
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <label>Tên tài khoản</label>
+                        </div>
+                        <div>
+                            <input class="form-control" value="@Model.User.UserName" name="UserName" disabled />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <label>Mật khẩu</label>
+                        </div>
+                        <div>
+                            <input class="form-control" value="@Model.User.Password" name="Password" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <label>Email</label>
+                        </div>
+                        <div>
+                            <input class="form-control" value="@Model.User.Email" name="Email" disabled />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <label>Họ và tên</label>
+                        </div>
+                        <div>
+                            <input class="form-control" value="@Model.User.Name" name="Name" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <label>Địa chỉ</label>
+                        </div>
+                        <div>
+                            <input class="form-control" value="@Model.User.Address" name="Address" disabled />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <label>Số điện thoại</label>
+                        </div>
+                        <div>
+                            <input class="form-control" value="@Model.User.Phone" name="Phone" disabled />
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="text-center row">
+                    <div class="col-md-12">
+                        <a href="/HomeBasic/Edit/@Model.User.id" class="btn btn-primary">Thay đổi</a>
+                    </div>
+                </div>
+
+            </div>
+            <div id="menu2" style="display:none">
+                <div class="row">
+                    <img width="100%" height="280px" src="~/Assets/Client/img/Cover/@Model.User.Cover" /><br />
+                    <button type="button" class="btn btn-primary" id="EditConver">Thay đổi ảnh bìa</button><br /><br />
+                    <img width="18%" height="210px" src="~/Assets/Client/img/Avatar/@Model.User.Cover" /><br />
+                    <button type="button" class="btn btn-primary" id="EditAvatar">Thay đổi ảnh đại diện</button>
+                </div>
+            </div>
+          
+            <div id="menu3" style="display:none">
+                <div class="row">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Nhập lại mật khẩu cũ</label>
+                                <input class="form-control" placeholder="Mật khẩu cũ" name="Password" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label >Mật khẩu mới</label>
+                                <input class="form-control" placeholder="Mật khẩu mới" name="newPassword" />
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Nhập lại mật khẩu mới</label>
+                                <input class="form-control" placeholder="Mật khẩu cũ" name="confignewPassword" />
+                            </div>
+                        </div>
+                        <br />
+
+                            <div class="row">
+                                <div class="col-md-6 text-center"><button class="btn btn-primary" id="btnDoimatkhau">Thay đổi mật khẩu</button></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div id="menu4" style="display:none">
+                <table class="table table-bordered" id="" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Khách hàng</th>
+                            <th>Mặt hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th>Tình trạng</th>
+                            <th>Ngày đặt hàng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Order)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>@item.UserName</td>
+                                <td>@item.productName</td>
+                                <td>@item.Total</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Address</td>
+                                <td>
+                                    @{
+                                        switch (item.Status)
+                                        {
+                                            case 0:
+                                                {<span class="badge badge-primary">Đang giao</span>}; break;
+                                            case 1:
+                                                {<span class="badge badge-success">Đã giao</span>}; break;
+                                            case 2:
+                                                {<span class="badge badge-danger">Đã hủy</span>}; break;
+                                            default: break;
+                                        }
+                                    }
+                                </td>
+                                <td>@item.CreatedDate</td>
+                            </tr>
+                                        }
+                    </tbody>
+                        
+                       
+                </table>
+
+            </div>
+            <div id="menu5" style="display:none"></div>
+            <br />
+            <br />
+            <br />
+            <br />
+   
+            <div class="row">
+                <div class="col-md-4">
+                    <p>
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </div>
+            </div>
+            
+            
+            <br />
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="img-thumbnail">
+                        <img src="~/Assets/assets/img/Hinh 1.jpg" width="100%" height="250px" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="img-thumbnail">
+                        <img src="~/Assets/assets/img/Hinh 2.jpg" width="100%" height="250px" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="img-thumbnail">
+                        <img src="~/Assets/assets/img/Hinh 3.jpg" width="100%" height="250px" />
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="img-thumbnail">
+                        <img src="~/Assets/assets/img/Hinh 4.jpg" width="100%" height="250px" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="img-thumbnail">
+                        <img src="~/Assets/assets/img/Hinh.jpg" width="100%" height="250px" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="img-thumbnail">
+                        <img src="~/Assets/assets/img/hinh-nen-hoa-huong-duong-dep-nhat-gioi-14.jpg" width="100%" height="250px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    
+    
+</div   >
+

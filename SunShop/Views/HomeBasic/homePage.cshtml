@@ -1,0 +1,83 @@
+﻿@model PagedList.IPagedList<Model.EF.Product>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "homePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2" style="height:auto;">
+            <div>
+                <h5 class="text-center">Menu</h5>
+                <ul class="list-group">
+                    <li class="list-group-item active">Sản phẩm</li>
+                    <li class="list-group-item">Tham quan</li>
+                    <li class="list-group-item">Video</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-center">Nhân viên hổ trợ</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><span>Quản lý cửa hàng</span></li>
+                    <li class="list-group-item"><span>Nhân viên 1</span></li>
+                    <li class="list-group-item"><span>Nhân viên 2</span></li>
+                    <li class="list-group-item"><span>Nhân viên 3</span></li>
+                </ul>
+            </div>  
+        </div>
+    <div class="col-md-10">
+        @using (Html.BeginForm("homePage", "HomeBasic", FormMethod.Get))
+        {
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-4">
+                    <div class="form-inline">
+                        <input type="text" id="search" class="form-control" name="searchString" placeholder="Nhập từ khóa" />
+                        <input type="submit" value="Tìm kiếm" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+            
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3" style="margin-bottom:1%">
+                    
+                    <div class="img-thumbnail" style="background-color: #f5f582;">
+                        <div style="height:225px;width:225px">
+                            <div class="SanPham">
+                                <img src="~/Assets/Client/img/@item.Code/@item.Avatar" height="100%" width="100%" />
+                            </div>
+                        </div>
+                        <div style="width:225px" class="text-center">
+                            <div class="row">
+                                <h5>@item.Name</h5>
+                                <div class="col-md-6">Giá mua :</div>
+                                <div class="col-md-6">
+                                    <del style="color:red">@item.Price</del>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">Khuyến mãi :</div>
+                                <div class="col-md-6">@item.PromotionPrice</div>
+                            </div>
+                            <div class="row">
+                                <button type="button"  class="btn btn-success btnAddItem" data-id="@item.ID">Thêm vào giỏ</button>
+                                <span class="glyphicon glyphicon-ok" id="@item.ID" style="display:none"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="text-center">@Html.PagedListPager(Model, page => Url.Action("homePage", new { page, @class = "btn btn-primary" }))
+        </div>
+    </div>
+</div>
+
+

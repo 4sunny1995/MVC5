@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunShop", "SunShop\SunShop.csproj", "{8A6FBE60-FE08-47F9-904A-4572CC2668C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{0513472D-ACC1-4CF6-AAB8-A950B201D9A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commonn", "Commonn\Commonn.csproj", "{A42B3F78-DB40-4016-9D24-CB530C2A665A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A6FBE60-FE08-47F9-904A-4572CC2668C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A6FBE60-FE08-47F9-904A-4572CC2668C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A6FBE60-FE08-47F9-904A-4572CC2668C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A6FBE60-FE08-47F9-904A-4572CC2668C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0513472D-ACC1-4CF6-AAB8-A950B201D9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0513472D-ACC1-4CF6-AAB8-A950B201D9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0513472D-ACC1-4CF6-AAB8-A950B201D9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0513472D-ACC1-4CF6-AAB8-A950B201D9A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A42B3F78-DB40-4016-9D24-CB530C2A665A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A42B3F78-DB40-4016-9D24-CB530C2A665A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A42B3F78-DB40-4016-9D24-CB530C2A665A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A42B3F78-DB40-4016-9D24-CB530C2A665A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
